@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/uowm-logo-xsmall.png" sizes="32x32" />
+  <link rel="icon" href="img/uowm-logo-xsmall.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="img/uowm-logo-xsmall.png" />
+  <title>UOWM 3D File Viewer</title>
+  <style>
+    @font-face {
+      font-display: swap;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      src: url('fonts/roboto-v30-greek_latin-regular.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      src: url('fonts/roboto-v30-greek_latin-500.woff2') format('woff2');
+    }
+
+    @media screen and (min-width: 800px) {
+      .logo-small {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 799px) {
+      .logo-big {
+        display: none;
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: roboto;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .navbar-logo {
+      height: 40px;
+    }
+
+    .button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #00ABC1;
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    .file-input {
+      display: none;
+    }
+
+    #canvasContainer {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 50px);
+
+    }
+
+    #canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .info-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: large;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div>
+      <a href="#"><img class="navbar-logo logo-big" src="/img/logowide.png" /></a>
+      <a href="#"><img class="navbar-logo logo-small" src="/img/logo.png" /></a>
+    </div>
+    <label for="file-upload" class="button"><img src="/img/upload.svg" width="24" height="24"></label>
+    <input type="file" id="file-upload" class="file-input" accept=".glb">
+  </div>
+  <div id="canvasContainer">
+    <div id="canvas"></div>
+    <div id="infoScreen" class="info-screen">
+      <h3>UOWM 3D VIEWER DEMO</h3>
+      <label>Upload a .glb file to view in 3D</label>
+      <br>
+      <label>OR</label>
+      <br>
+      <button id="demoButton" class="button">View Demo</button>
+    </div>
+  </div>
+
+
+  <script src="dist/bundle.js"></script>
+</body>
+
+</html>
