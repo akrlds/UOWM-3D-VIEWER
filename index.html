@@ -53,7 +53,12 @@
       box-sizing: border-box;
       border-bottom: 1px solid #e0e0e0;
     }
-
+    .button-div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
     .navbar-logo {
       height: 40px;
     }
@@ -63,19 +68,24 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      background-color: #00ABC1;
-      color: #ffffff;
+      margin-left:10px;
       font-size: 18px;
     }
 
-    .file-input {
-      display: none;
+    .blue {
+      background-color: #00ABC1;
+      color: #ffffff;
+    }
+
+    .gray {
+      background-color: #3b3b3b;
+      color: #ffffff;
     }
 
     #canvasContainer {
       position: relative;
       width: 100%;
-      height: calc(100vh - 50px);
+      height: calc(100vh - 100px);
 
     }
 
@@ -105,11 +115,14 @@
 <body>
   <div class="navbar">
     <div>
-      <a href="#"><img class="navbar-logo logo-big" src="img/logowide.png" /></a>
-      <a href="#"><img class="navbar-logo logo-small" src="img/logo.png" /></a>
+      <a href="#"><img class="navbar-logo logo-big" src="/img/logowide.png" /></a>
+      <a href="#"><img class="navbar-logo logo-small" src="/img/logo.png" /></a>
     </div>
-    <label for="file-upload" class="button"><img src="img/upload.svg" width="24" height="24"></label>
-    <input type="file" id="file-upload" class="file-input" accept=".glb">
+    <div class="button-div">
+      <button id="captureButton" class="button gray"><img src="/img/screenshot.svg" width="24" height="24"></button>
+    <label for="file-upload" class="button blue"><img src="/img/upload.svg" width="24" height="24"></label>
+    <input type="file" id="file-upload" class="file-input" accept=".glb" style="display: none;">
+    </div> 
   </div>
   <div id="canvasContainer">
     <div id="canvas"></div>
@@ -119,7 +132,7 @@
       <br>
       <label>OR</label>
       <br>
-      <button id="demoButton" class="button">View Demo</button>
+      <button id="demoButton" class="button gray">View Demo</button>
     </div>
   </div>
 
