@@ -9,39 +9,34 @@
   <link rel="apple-touch-icon" href="img/uowm-logo-xsmall.png" />
   <title>UOWM SHOWROOM</title>
   <style>
-    @font-face {
-      font-display: swap;
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 400;
-      src: url('fonts/roboto-v30-greek_latin-regular.woff2') format('woff2');
+    * {
+      font-family: Cera, sans-serif;
     }
 
     @font-face {
       font-display: swap;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Cera';
       font-style: normal;
-      font-weight: 500;
-      src: url('fonts/roboto-v30-greek_latin-500.woff2') format('woff2');
+      font-weight: normal;
+      src: url('fonts/cera-pro-light.woff') format('woff');
     }
 
-    @media screen and (min-width: 800px) {
-      .logo-small {
-        display: none;
-      }
+    @font-face {
+      font-display: swap;
+      font-family: 'Cera';
+      font-style: normal;
+      font-weight: bold;
+      src: url('fonts/cera-pro-bold.woff') format('woff');
     }
 
-    @media screen and (max-width: 799px) {
-      .logo-big {
-        display: none;
-      }
-    }
+    @media screen and (min-width: 800px) {.logo-small {display: none;}}
+
+    @media screen and (max-width: 799px) {.logo-big {display: none;}}
 
     body {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      font-family: roboto;
     }
 
     .navbar {
@@ -52,50 +47,54 @@
       box-sizing: border-box;
       border-bottom: 1px solid #e0e0e0;
     }
+
     .button-div {
       display: flex;
       align-items: center;
       justify-content: space-between;
       box-sizing: border-box;
     }
+
     .navbar-logo {
       height: 40px;
-      margin-left:10px;
+      margin-left: 10px;
     }
 
     .button {
       border: none;
       cursor: pointer;
-  
       font-size: 18px;
       height: 60px;
       width: 60px;
-      border-left:1px solid #e0e0e0;
+      border-left: 1px solid #e0e0e0;
       background-color: none;
       background: none;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .demobutton {
       border: none;
       cursor: pointer;
-  border-radius: 5px;
-      font-size: 18px;
+      border-radius: 5px;
+      font-size: 16px;
       height: 50px;
       width: 90px;
-      border:1px solid #e0e0e0;
-      background-color: #fff;
+      background-color: #00ABC1;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: white;
     }
+
     #canvasContainer {
       position: relative;
       width: 100%;
       height: calc(100vh - 60px);
-background-color: #eeeeee;
+      background-color: #eeeeee;
     }
+
     #canvas {
       position: absolute;
       top: 0;
@@ -106,7 +105,6 @@ background-color: #eeeeee;
 
     .info-screen {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       position: absolute;
@@ -114,7 +112,17 @@ background-color: #eeeeee;
       left: 0;
       width: 100%;
       height: 100%;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       font-size: large;
+      background-color: white;
+      padding: 40px;
+      border: 1px solid #e0e0e0;
+      max-width:500px;
     }
   </style>
 </head>
@@ -126,26 +134,27 @@ background-color: #eeeeee;
       <a href="#"><img class="navbar-logo logo-small" src="img/logo.png" /></a>
     </div>
     <div class="button-div">
-      <button id="captureButton" class="button" style="display:none;"><img src="img/screenshot.svg" width="24" height="24"></button>
-    <label for="file-upload" class="button"><img src="img/upload.svg" width="24" height="24"></label>
-    <input type="file" id="file-upload" class="file-input" accept=".glb" style="display: none;">
-    <button id="closeButton" class="button" style="display:none;"><img src="img/close.svg" width="24" height="24"></button>
-    </div> 
+      <button id="captureButton" class="button" style="display:none;"><img src="img/screenshot.svg" width="24"
+          height="24"></button>
+      <label for="file-upload" class="button"><img src="img/upload.svg" width="24" height="24"></label>
+      <input type="file" id="file-upload" class="file-input" accept=".glb" style="display: none;">
+      <button id="closeButton" class="button" style="display:none;"><img src="img/close.svg" width="24"
+          height="24"></button>
+    </div>
   </div>
   <div id="canvasContainer">
     <div id="canvas"></div>
     <div id="infoScreen" class="info-screen">
+      
+      <div class="card">
+      <img height="220" alt="Launching" title="Launching - undraw.co" src="img/space.svg"/></br>
       <h3>UOWM SHOWROOM</h3>
-      <label>Ανεβάστε ένα αρχείο .glb για να το δείτε σε 3D</label>
+      <p style="text-align: center;">Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.</p>
+      <p style="text-align: center;">Ανεβάστε ένα αρχείο .glb για να το δείτε σε 3D<br><br>ή<br><br>δείτε το δοκιμαστικό μοντέλο:</p>
       <br>
-      <label>ή</label>
-      <br>
-      <span>δείτε το δοκιμαστικό μοντέλο:</span><br>
-      <button id="demoButton" class="demobutton" style="margin-left:0px;">Demo</button>
-    </div>
+      <button id="demoButton" class="demobutton" style="margin-left:0px;"><b>DEMO</b></button>
+    </div></div>
   </div>
-
-
   <script src="dist/bundle.js"></script>
 </body>
 
