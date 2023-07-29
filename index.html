@@ -29,28 +29,25 @@
       src: url('fonts/cera-pro-bold.woff') format('woff');
     }
 
-    @media screen and (min-width: 800px) {
-.logo-small {display: none;}
-.card{padding:0;height:100%;width:100%;}
-}
+    @media screen and (min-width: 800px) {.logo-small {display: none;}}
 
     @media screen and (max-width: 799px) {.logo-big {display: none;}}
 
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
+overflow: hidden;
       color: #6D6F71;
     }
 
     .navbar {
+      position: sticky;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 60px;
       box-sizing: border-box;
       border-bottom: 1px solid #e0e0e0;
-z-index:999;
     }
 
     .button-div {
@@ -91,6 +88,8 @@ z-index:999;
       justify-content: center;
       align-items: center;
       color: white;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     #canvasContainer {
@@ -98,7 +97,6 @@ z-index:999;
       width: 100%;
       height: calc(100vh - 60px);
       background-color: #eeeeee;
-z-index:1;
     }
 
     #canvas {
@@ -110,26 +108,17 @@ z-index:1;
     }
 
     .info-screen {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-    }
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: large;
       background-color: white;
-      padding: 10px;
-      border: 1px solid #e0e0e0;
-      max-width:500px;
+      text-align: center;
+      overflow-y: auto;
     }
+
   </style>
 </head>
 
@@ -150,17 +139,18 @@ z-index:1;
   </div>
   <div id="canvasContainer">
     <div id="canvas"></div>
+    <div class="info-container">
     <div id="infoScreen" class="info-screen">
       
-      <div class="card">
-      <img height="180" alt="Launching" title="Launching - undraw.co" src="img/space.svg"/></br>
+<div style="padding:50px;">
+      <img height="200" alt="Launching" title="Launching - undraw.co" src="img/space.svg"/></br>
       <h3>UOWM SHOWROOM</h3>
-      <p style="text-align: center;">Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.</p>
-      <p style="text-align: center;">Ανεβάστε ένα αρχείο .glb για να το δείτε σε 3D<br>ή<br>δείτε το δοκιμαστικό μοντέλο:</p>
+      <p style="text-align: center;padding:0 15px;">Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.</p>
+      <p style="text-align: center;padding:0 15px;">Ανεβάστε ένα αρχείο .glb για να το δείτε σε 3D<br><br>ή<br><br>δείτε το δοκιμαστικό μοντέλο:</p>
       <br>
-      <button id="demoButton" class="demobutton" style="margin-left:0px;"><b>DEMO</b></button>
-    </div></div>
-  </div>
+      <button id="demoButton" class="demobutton"><b>DEMO</b></button>
+    </div>
+  </div></div></div>
   <script src="dist/bundle.js"></script>
 </body>
 
