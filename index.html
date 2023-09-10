@@ -153,12 +153,12 @@
           src="img/logo.png" /></a>
     </div>
     <div class="button-div">
-      <button id="captureButton" class="button" style="display:none;"><img src="img/screenshot.svg" width="24"
+      <button id="captureButton" role="button" class="button" style="display:none;"><img src="img/screenshot.svg" width="24"
           height="24" alt="Capture" title="Capture"></button>
-      <label for="file-upload" class="button"><img src="img/upload.svg" width="24" height="24" alt="Upload"
+      <label for="file-upload" role="button" class="button"><img src="img/upload.svg" width="24" height="24" alt="Upload"
           title="Upload"></label>
       <input type="file" id="file-upload" class="file-input" accept=".glb" style="display: none;">
-      <button id="closeButton" class="button" style="display:none;"><img src="img/close.svg" width="24" height="24"
+      <button id="closeButton" role="button" class="button" style="display:none;"><img src="img/close.svg" width="24" height="24"
           alt="Close" title="Close"></button>
     </div>
   </div>
@@ -175,11 +175,9 @@
           <p style="text-align: center;">Ανεβάστε ένα αρχείο .glb για να το δείτε σε 3D<br><br>ή<br><br>δείτε το
             δοκιμαστικό μοντέλο:</p>
           <br>
-          <button id="demoButton" class="demobutton">
+          <button role="button" id="demoButton" class="demobutton">
             <div id="demo-container"><b>DEMO</b></div>
-            <div id="loader-container" style="display: none;">
-              <img src="img/loader.svg" alt="Loader" style="vertical-align: middle;">
-            </div>
+              <img src="img/loader.svg" id="loader" alt="Loader" style="vertical-align:middle;display:none;">
           </button>
         </div>
       </div>
