@@ -151,6 +151,10 @@ function init() {
       undefined,
       function (error) {
         console.error('Error loading model:', error);
+        demoButton.disabled = false;
+        demoButton.style.backgroundColor = '#303030';
+        loaderContainer.style.display = 'none';
+        demoContainer.style.display = 'inline-block';
       }
     );
   }
