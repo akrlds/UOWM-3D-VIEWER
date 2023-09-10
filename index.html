@@ -4,24 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον." />
+  <meta name="description"
+    content="Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον." />
   <link rel="icon" href="img/uowm-logo-xsmall.png" />
   <title>UOWM SHOWROOM</title>
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://akrlds.github.io/UOWM-3D-VIEWER/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="UOWM SHOWROOM">
-    <meta property="og:description" content="Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.">
-    <meta property="og:image" content="https://akrlds.github.io/UOWM-3D-VIEWER/img/UOWM-Banner.jpg">
-  
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="akrlds.github.io">
-    <meta property="twitter:url" content="https://akrlds.github.io/UOWM-3D-VIEWER/">
-    <meta name="twitter:title" content="UOWM SHOWROOM">
-    <meta name="twitter:description" content="Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.">
-    <meta name="twitter:image" content="https://akrlds.github.io/UOWM-3D-VIEWER/img/UOWM-Banner.jpg">
+  <meta property="og:url" content="https://akrlds.github.io/UOWM-3D-VIEWER/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="UOWM SHOWROOM">
+  <meta property="og:description"
+    content="Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.">
+  <meta property="og:image" content="https://akrlds.github.io/UOWM-3D-VIEWER/img/UOWM-Banner.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="akrlds.github.io">
+  <meta property="twitter:url" content="https://akrlds.github.io/UOWM-3D-VIEWER/">
+  <meta name="twitter:title" content="UOWM SHOWROOM">
+  <meta name="twitter:description"
+    content="Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.">
+  <meta name="twitter:image" content="https://akrlds.github.io/UOWM-3D-VIEWER/img/UOWM-Banner.jpg">
 
   <style>
     * {
@@ -44,14 +45,22 @@
       src: url('fonts/cera-pro-bold.woff') format('woff');
     }
 
-    @media screen and (min-width: 800px) {.logo-small {display: none;}}
+    @media screen and (min-width: 800px) {
+      .logo-small {
+        display: none;
+      }
+    }
 
-    @media screen and (max-width: 799px) {.logo-big {display: none;}}
+    @media screen and (max-width: 799px) {
+      .logo-big {
+        display: none;
+      }
+    }
 
     body {
       margin: 0;
       padding: 0;
-overflow: hidden;
+      overflow: hidden;
       color: #6D6F71;
     }
 
@@ -132,49 +141,50 @@ overflow: hidden;
       text-align: center;
       overflow-y: auto;
     }
-    .loader-container {
-  display: none;
-}
-
-.loader {
-
-  vertical-align: middle;
-}
   </style>
 </head>
 
 <body>
   <div class="navbar">
     <div>
-      <a href="#"><img class="navbar-logo logo-big" src="img/logowide.png" /></a>
-      <a href="#"><img class="navbar-logo logo-small" src="img/logo.png" /></a>
+      <a href="#"><img class="navbar-logo logo-big" alt="UOWM SHOWROOM" Title="UOWM SHOWROOM"
+          src="img/logowide.png" /></a>
+      <a href="#"><img class="navbar-logo logo-small" alt="UOWM SHOWROOM" Title="UOWM SHOWROOM"
+          src="img/logo.png" /></a>
     </div>
     <div class="button-div">
       <button id="captureButton" class="button" style="display:none;"><img src="img/screenshot.svg" width="24"
-          height="24"></button>
-      <label for="file-upload" class="button"><img src="img/upload.svg" width="24" height="24"></label>
+          height="24" alt="Capture" title="Capture"></button>
+      <label for="file-upload" class="button"><img src="img/upload.svg" width="24" height="24" alt="Upload"
+          title="Upload"></label>
       <input type="file" id="file-upload" class="file-input" accept=".glb" style="display: none;">
-      <button id="closeButton" class="button" style="display:none;"><img src="img/close.svg" width="24"
-          height="24"></button>
+      <button id="closeButton" class="button" style="display:none;"><img src="img/close.svg" width="24" height="24"
+          alt="Close" title="Close"></button>
     </div>
   </div>
   <div id="canvasContainer">
     <div id="canvas"></div>
     <div class="info-container">
-    <div id="infoScreen" class="info-screen">
-      
-      <div style="padding:50px;">
-      <img height="200" alt="Launching" title="Launching - undraw.co" src="img/space.svg"/></br>
-      <h3>UOWM SHOWROOM</h3>
-      <p style="text-align: center;">Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα μινιμαλιστικό περιβάλλον.</p>
-      <p style="text-align: center;">Ανεβάστε ένα αρχείο .glb για να το δείτε σε 3D<br><br>ή<br><br>δείτε το δοκιμαστικό μοντέλο:</p>
-      <br>
-      <button id="demoButton" class="demobutton"><div id="demo-container"><b>DEMO</b></div>
-        <div id="loader-container" class="loader-container">
-          <img src="img/loader.svg" alt="Loader" class="loader">
-        </div></button>
+      <div id="infoScreen" class="info-screen">
+
+        <div style="padding:50px;">
+          <img height="200" alt="Launching" title="Launching - undraw.co" src="img/space.svg" /></br>
+          <h3>UOWM SHOWROOM</h3>
+          <p style="text-align: center;">Μία εφαρμογή για την προβολή και φωτογράφιση τρισδιάστατων μοντέλων σε ένα
+            μινιμαλιστικό περιβάλλον.</p>
+          <p style="text-align: center;">Ανεβάστε ένα αρχείο .glb για να το δείτε σε 3D<br><br>ή<br><br>δείτε το
+            δοκιμαστικό μοντέλο:</p>
+          <br>
+          <button id="demoButton" class="demobutton">
+            <div id="demo-container"><b>DEMO</b></div>
+            <div id="loader-container" style="display: none;">
+              <img src="img/loader.svg" alt="Loader" style="vertical-align: middle;">
+            </div>
+          </button>
+        </div>
+      </div>
     </div>
-  </div></div></div>
+  </div>
   <script src="dist/bundle.js"></script>
 </body>
 
