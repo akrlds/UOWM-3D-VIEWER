@@ -1,6 +1,6 @@
-import * as THREE from './Three.js';
-import { GLTFLoader } from './GLTFLoader.js';
-import { OrbitControls } from './OrbitControls.js';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -75,6 +75,8 @@ function init() {
     }
   }
 
+  const loaderContainer = document.getElementById('loader-container');
+  const demoContainer = document.getElementById('demo-container');
   const demoButton = document.getElementById('demoButton');
   demoButton.addEventListener('click', loadDemoModel);
 
@@ -107,6 +109,10 @@ function init() {
   }
 
   function loadDemoModel() {
+    demoButton.disabled = true;
+    demoButton.style.backgroundColor = '#6D6F71';
+    loaderContainer.style.display = 'inline-block';
+    demoContainer.style.display = 'none';
     const url = 'models/model.glb';
     const loader = new GLTFLoader();
     loader.load(
@@ -137,6 +143,10 @@ function init() {
         captureButton.style.display = 'block';
         closeButton.style.display = 'block';
         hideInfoScreen();
+        demoButton.disabled = false;
+        demoButton.style.backgroundColor = '#303030';
+        loaderContainer.style.display = 'none';
+        demoContainer.style.display = 'inline-block';
       },
       undefined,
       function (error) {
