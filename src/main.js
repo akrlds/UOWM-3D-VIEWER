@@ -75,7 +75,7 @@ function init() {
     }
   }
 
-  const loader = document.getElementById('loader');
+  const loaderContainer = document.getElementById('loader');
   const demoContainer = document.getElementById('demo-container');
   const demoButton = document.getElementById('demoButton');
   demoButton.addEventListener('click', loadDemoModel);
@@ -111,7 +111,7 @@ function init() {
   function loadDemoModel() {
     demoButton.disabled = true;
     demoButton.style.backgroundColor = '#6D6F71';
-    loader.style.display = 'inline-block';
+    loaderContainer.style.display = 'inline-block';
     demoContainer.style.display = 'none';
     const url = 'models/model.glb';
     const loader = new GLTFLoader();
@@ -145,7 +145,7 @@ function init() {
         hideInfoScreen();
         demoButton.disabled = false;
         demoButton.style.backgroundColor = '#303030';
-        loader.style.display = 'none';
+        loaderContainer.style.display = 'none';
         demoContainer.style.display = 'inline-block';
       },
       undefined,
@@ -153,7 +153,7 @@ function init() {
         console.error('Error loading model:', error);
         demoButton.disabled = false;
         demoButton.style.backgroundColor = '#303030';
-        loader.style.display = 'none';
+        loaderContainer.style.display = 'none';
         demoContainer.style.display = 'inline-block';
       }
     );
